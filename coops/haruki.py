@@ -1,7 +1,8 @@
-import coop
+from games import coop
+
 
 def coop_event_haruki(player):
-    haruki_event = [0]*coop.max_level
+    haruki_event = [0] * coop.max_coop_level
     init_event_haruki(haruki_event)
     haruki_event[player.coops[coop.cpn_haruki]](player)
 

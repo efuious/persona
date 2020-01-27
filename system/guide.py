@@ -1,4 +1,5 @@
-import system as sys
+from system import control as sys
+
 
 def show_inst():
     sys.clrscr()
@@ -49,3 +50,39 @@ def school_talk_guide():
     print('和谁谈话？')
     print('1. 春树')
     print('2. 离开')
+
+def river_guide():
+    sys.clrscr()
+    print('这里是河边')
+    print('1. 去修理店')
+    print('2. 离开')
+
+def repair_shop_guide():
+    sys.clrscr()
+    print('这里是修理店')
+    print('1. 购买')
+    print('2. 修理')
+    print('3. 出售')
+    print('4. 离开')
+    print('5. 交谈')
+
+def street_guide():
+    sys.clrscr()
+    print('这里是街道')
+    print('1. 诊所')
+    print('2. 快餐店')
+    print('3. 离开')
+
+def clinic_guide():
+    sys.clrscr()
+    print('这里是诊所')
+    print('1. 买药')
+    print('2. 离开')
+    print('3. 交谈')
+
+def fast_food_guide():
+    sys.clrscr()
+    print('这里是快餐店')
+    print('1. 买东西')
+    print('2. 打发时间')
+    print('3. 离开')
