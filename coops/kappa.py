@@ -1,63 +1,47 @@
 from games import coop
+from coops import topcoop as tp
 
+class coop_p(tp.cp_event):
+    def event_level_0(self):
+        print('do coop event: kappa 0')
+        self.player.coop_plus(coop.cpn_kappa)
 
-def coop_event_kappa(player):
-    kappa_event = [0] * coop.max_coop_level
-    init_event_kappa(kappa_event)
-    kappa_event[player.coops[coop.cpn_kappa]](player)
+    def event_level_1(self):
+        print('do coop event: kappa 1')
+        self.player.coop_plus(coop.cpn_kappa)
 
-def init_event_kappa(kappa_event):
-        kappa_event[0] = coop_event_kappa_0
-        kappa_event[1] = coop_event_kappa_1
-        kappa_event[2] = coop_event_kappa_2
-        kappa_event[3] = coop_event_kappa_3
-        kappa_event[4] = coop_event_kappa_4
-        kappa_event[5] = coop_event_kappa_5
-        kappa_event[6] = coop_event_kappa_6
-        kappa_event[7] = coop_event_kappa_7
-        kappa_event[8] = coop_event_kappa_8
-        kappa_event[9] = coop_event_kappa_9
+    def event_level_2(self):
+        print('do coop event: kappa 2')
+        self.player.coop_plus(coop.cpn_kappa)
 
+    def event_level_3(self):
+        print('do coop event: kappa 3')
+        self.player.coop_plus(coop.cpn_kappa)
 
-def coop_event_kappa_0(player):
-    print('do coop event: kappa 0')
-    player.coop_plus(coop.cpn_kappa)
+    def event_level_4(self):
+        print('do coop event: kappa 4')
+        self.player.coop_plus(coop.cpn_kappa)
 
-def coop_event_kappa_1(player):
-    print('do coop event: kappa 1')
-    player.coop_plus(coop.cpn_kappa)
+    def event_level_5(self):
+        print('do coop event: kappa 5')
+        self.player.coop_plus(coop.cpn_kappa)
 
-def coop_event_kappa_2(player):
-    print('do coop event: kappa 2')
-    player.coop_plus(coop.cpn_kappa)
+    def event_level_6(self):
+        print('do coop event: kappa 6')
+        self.player.coop_plus(coop.cpn_kappa)
 
-def coop_event_kappa_3(player):
-    print('do coop event: kappa 3')
-    player.coop_plus(coop.cpn_kappa)
+    def event_level_7(self):
+        print('do coop event: kappa 7')
+        self.player.coop_plus(coop.cpn_kappa)
 
-def coop_event_kappa_4(player):
-    print('do coop event: kappa 4')
-    player.coop_plus(coop.cpn_kappa)
+    def event_level_8(self):
+        print('do coop event: kappa 8')
+        self.player.coop_plus(coop.cpn_kappa)
 
-def coop_event_kappa_5(player):
-    print('do coop event: kappa 5')
-    player.coop_plus(coop.cpn_kappa)
+    def event_level_9(self):
+        print('do coop event: kappa 9')
+        self.player.coop_plus(coop.cpn_kappa)
 
-def coop_event_kappa_6(player):
-    print('do coop event: kappa 6')
-    player.coop_plus(coop.cpn_kappa)
-
-def coop_event_kappa_7(player):
-    print('do coop event: kappa 7')
-    player.coop_plus(coop.cpn_kappa)
-
-def coop_event_kappa_8(player):
-    print('do coop event: kappa 8')
-    player.coop_plus(coop.cpn_kappa)
-
-def coop_event_kappa_9(player):
-    print('do coop event: kappa 9')
-    player.coop_plus(coop.cpn_kappa)
-
-if __name__ == '__main__':
-    coop_event_kappa(3)
+def coop_event(player):
+    cpe = coop_p(coop.cpn_kappa,player)
+    cpe.do_coop()

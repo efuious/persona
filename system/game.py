@@ -1,8 +1,7 @@
-from system import control as sys
 from games import person as p
-from days import  day0 as day0
+from days import day0 as day0
 from days import day1 as day1
-from games import day
+from days import day
 
 ndays = 2
 
@@ -36,7 +35,7 @@ def game_load():
 def new_game():
     print('starting games...')
     persona = p.player(p.init_player('new player'))
-    d = day.day_info(0,0)     #day,time
+    d = day.day_info(0, 0)     #day,time
     start_game(d,persona)
 
 if __name__ == '__main__':

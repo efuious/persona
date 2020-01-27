@@ -1,7 +1,7 @@
 from games import events as event
 from system import guide as guide
-from system import control as sys
-from games import day as day
+from days import day as day
+
 
 def show_error(errn):
             print('error input: ', errn)
@@ -47,7 +47,7 @@ def house(td):
 def jinja(td):
     now = td.day.get_time()
     while td.day.get_time() == now:
-        print('现在是：',day.time_list[td.day.get_time()],now)
+        print('现在是：', day.time_list[td.day.get_time()], now)
         guide.jinja_guide()
         _input = int(input('choose: '))
         if _input == 1:
@@ -62,7 +62,7 @@ def jinja(td):
 def school(td):
     now = td.day.get_time()
     while td.day.get_time() == now:
-        print('现在是：',day.time_list[td.day.get_time()],now)
+        print('现在是：', day.time_list[td.day.get_time()], now)
         guide.school_guide()
         _input = int(input('choose'))
         if _input == 1:

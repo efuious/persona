@@ -104,6 +104,5 @@ class day():
         pass
     def night_event(self):
         pass
-
-if __name__ == '__main__':
-    print(ntime)
+    def show(self):
+        print(self.td)

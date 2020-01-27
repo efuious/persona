@@ -1,7 +1,7 @@
-from system import control as sys
 from games import person as p
 from games import coop
-from games import day
+from days import day
+
 
 def event_time_pass(td):
     if day.is_beforenoon(td.day.get_time()):

@@ -16,11 +16,11 @@ cpn_kappa = 3
 cpn_erin = 4
 
 coop_person = [0]*ncoop
-coop_person[cpn_reimu]  = reimu.coop_event_reimu
-coop_person[cpn_haruki] = haruki.coop_event_haruki
-coop_person[cpn_erin]   = erin.coop_event_erin
-coop_person[cpn_shion]  = shion.coop_event_shion
-coop_person[cpn_kappa]  = kappa.coop_event_kappa
+coop_person[cpn_reimu]  = reimu.coop_event
+coop_person[cpn_haruki] = haruki.coop_event
+coop_person[cpn_erin]   = erin.coop_event
+coop_person[cpn_shion]  = shion.coop_event
+coop_person[cpn_kappa]  = kappa.coop_event
 
-def coop_to(coop_p_n,player):
-    coop_person[coop_p_n](player)
+def coop_to(cpn,player):
+    coop_person[cpn](player)

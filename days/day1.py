@@ -1,7 +1,6 @@
-from games import day
+from days import day
 from games import coop
 from games import map
-from games import events as event
 from games import person as p
 
 class today(day.day):

@@ -1,7 +1,6 @@
-from games import day as day
-from games import events as event
+from days import day
 from games import map
-from games import day
+
 
 class today(day.day):
     def morning_event(self):
