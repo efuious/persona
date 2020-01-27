@@ -1,49 +1,33 @@
-import system as sys
-import map
-import events as event
+from games import day as day
+from games import events as event
+from games import map
+from games import day
 
-def the_day(tdn,day):
-    if day == tdn:
-        return True
-    return False
+class today(day.day):
+    def morning_event(self):
+        print('早上')
+        print('今天开始就在这里生活了，先跟大家打个招呼吧')
+        print('打招呼中。。。')
+        print('打完招呼了，去熟悉一下这边的环境吧')
+        self.td.day.time_pass()
 
-def today(td):
-    tdn = td.day.get_day()
-    while the_day(tdn,td.day.get_day()):
-        if the_day(tdn,td.day.get_day()) and sys.is_morning(td.day.get_time()):
-            morning_event(td)
-        elif the_day(tdn,td.day.get_day()) and sys.is_beforenoon(td.day.get_time()):
-            beforenoon_event(td)
-        elif the_day(tdn,td.day.get_day()) and sys.is_noon(td.day.get_time()):
-            noon_event(td)
-        elif the_day(tdn,td.day.get_day()) and sys.is_afternoon(td.day.get_time()):
-            afternoon_event(td)
-        elif the_day(tdn,td.day.get_day()) and sys.is_night(td.day.get_time()):
-            night_event(td)
-        else:
-            td.day.day_pass()
+    def beforenoon_event(self):
+        print('上午')
+        map.house(self.td)
 
+    def noon_event(self):
+        print('中午')
+        map.house(self.td)
 
-def morning_event(td):
-    print('早上')
-    print('今天开始就在这里生活了，先跟大家打个招呼吧')
-    print('打招呼中。。。')
-    print('打完招呼了，去熟悉一下这边的环境吧')
-    td.day.time_pass()
+    def afternoon_event(self):
+        print('下午')
+        map.house(self.td)
 
-def beforenoon_event(td):
-    print('上午')
-    map.house(td)
+    def night_event(self):
+        print('晚上')
+        map.house(self.td)
 
-def noon_event(td):
-    print('中午')
-    td.day.time_pass()
+def day0(td):
+    d0 = today(td)
+    d0.daying()
 
-def afternoon_event(td):
-    print('下午')
-    map.house(td)
-
-def night_event(td):
-    print('晚上')
-    print('今天很累了，就先休息吧')
-    event.sleep(td)

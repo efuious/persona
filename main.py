@@ -1,15 +1,16 @@
-import guide as g
+from system import guide as guide
+
 
 def main_page():
     while True:
-        g.show_inst()
+        guide.show_inst()
         _input = input('input: ')
         if _input == '1':
-            print('start a new game')
+            print('start a new games')
         elif _input == '2':
             print('load savedata')
         elif _input == '3':
-            print('game settings')
+            print('games settings')
         elif _input == '4':
             exit()
         else:

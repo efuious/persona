@@ -1,7 +1,7 @@
-import coop
+from games import coop
 
 def coop_event_reimu(player):
-    reimu_event = [0]*coop.max_level
+    reimu_event = [0] * coop.max_coop_level
     init_event_reimu(reimu_event)
     reimu_event[player.coops[coop.cpn_reimu]](player)
 

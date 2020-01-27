@@ -1,30 +1,19 @@
-import system as sys
-import person as p
-import days.day0 as day0
-import days.day1 as day1
+from system import control as sys
+from games import person as p
+from days import  day0 as day0
+from days import day1 as day1
+from games import day
 
 ndays = 2
 
 days = [0]*ndays
-days[0] = day0.today
-days[1] = day1.today
+days[0] = day0.day0
+days[1] = day1.day1
 
 class one_day():
     def __init__(self,day,player):
         self.day = day
         self.player = player
-        self.init_map()
-        self.init_time()
-
-    def init_time(self):
-        print('init time')
-
-    def init_map(self):
-        print('init map')
-
-    def map_move(self):
-        print('map move')
-
 
 def start_game(day,person):
     today = one_day(day,person)
@@ -35,7 +24,8 @@ def gaming(td):
     for i in range(ndays):
         print('entering days:',td.day.get_day())
         days[td.day.get_day()](td)
-
+    print('GAME CLEAR...\nCONGRATULATIONS！')
+    td.player.show_konwn_coop()
 
 def game_save():
     pass
@@ -44,10 +34,10 @@ def game_load():
     pass #connect to start_game()
 
 def new_game():
-    print('starting game...')
+    print('starting games...')
     persona = p.player(p.init_player('new player'))
-    day = sys.day_info(0,0)
-    start_game(day,persona)
+    d = day.day_info(0,0)     #day,time
+    start_game(d,persona)
 
 if __name__ == '__main__':
     new_game()
