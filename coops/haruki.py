@@ -7,39 +7,39 @@ class coop_p(tp.cp_event):
         self.player.coop_plus(coop.cpn_haruki)
     
     def event_level_1(self):
-        print('和春树一起度过了愉快的时间')
+        print('和春树一起度过了愉快的时间 1')
         self.player.coop_plus(coop.cpn_haruki)
     
     def event_level_2(self):
-        print('do coop event: haruki 2')
+        print('和春树一起度过了愉快的时间 2')
         self.player.coop_plus(coop.cpn_haruki)
     
     def event_level_3(self):
-        print('do coop event: haruki 3')
+        print('和春树一起度过了愉快的时间 3')
         self.player.coop_plus(coop.cpn_haruki)
     
     def event_level_4(self):
-        print('do coop event: haruki 4')
+        print('和春树一起度过了愉快的时间 4')
         self.player.coop_plus(coop.cpn_haruki)
     
     def event_level_5(self):
-        print('do coop event: haruki 5')
+        print('和春树一起度过了愉快的时间 5')
         self.player.coop_plus(coop.cpn_haruki)
     
     def event_level_6(self):
-        print('do coop event: haruki 6')
+        print('和春树一起度过了愉快的时间 6')
         self.player.coop_plus(coop.cpn_haruki)
     
     def event_level_7(self):
-        print('do coop event: haruki 7')
+        print('和春树一起度过了愉快的时间 7')
         self.player.coop_plus(coop.cpn_haruki)
     
     def event_level_8(self):
-        print('do coop event: haruki 8')
+        print('和春树一起度过了愉快的时间 8')
         self.player.coop_plus(coop.cpn_haruki)
     
     def event_level_9(self):
-        print('do coop event: haruki 9')
+        print('和春树一起度过了愉快的时间 9')
         self.player.coop_plus(coop.cpn_haruki)
 
 def coop_event(player):
