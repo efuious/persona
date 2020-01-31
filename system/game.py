@@ -25,6 +25,7 @@ def gaming(td):
         days[td.day.get_day()](td)
     print('GAME CLEAR...\nCONGRATULATIONS！')
     td.player.show_konwn_coop()
+    td.player.show_all_status()
 
 def game_save():
     pass

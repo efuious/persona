@@ -1,6 +1,7 @@
 from games import events as event
 from system import guide as guide
 from days import day as day
+from games import coop
 
 
 def show_error(errn):
@@ -27,7 +28,7 @@ def move(td):
 def house(td):
     now = td.day.get_time()
     while td.day.get_time() == now:
-        print('现在是：',td.day.get_time(),now)
+        print('现在是：',td.day.get_time())
         guide.house_guide()
         _input = int(input('choose:'))
         if _input == 1:
@@ -41,19 +42,22 @@ def house(td):
         elif _input == 4:
             event.sleep(td)
             return
+        elif _input == 5:
+            event.show_data(td)
         else:
             show_error(_input)
 
 def jinja(td):
     now = td.day.get_time()
     while td.day.get_time() == now:
-        print('现在是：', day.time_list[td.day.get_time()], now)
+        print('现在是：', day.time_list[td.day.get_time()])
         guide.jinja_guide()
         _input = int(input('choose: '))
         if _input == 1:
-            event.coop_reimu(td)
+            event.coop_event(coop.cpn_star,td)
+            #event.coop_star(td)
         elif _input == 2:
-            pass
+            event.worship(td)
         elif _input == 3:
             move(td)
         else:
@@ -62,14 +66,16 @@ def jinja(td):
 def school(td):
     now = td.day.get_time()
     while td.day.get_time() == now:
-        print('现在是：', day.time_list[td.day.get_time()], now)
+        print('现在是：', day.time_list[td.day.get_time()],)
         guide.school_guide()
         _input = int(input('choose'))
         if _input == 1:
             talk_to_classmate(td)
         elif _input == 2:
-            pass
+            event.libaray(td)
         elif _input == 3:
+            pass
+        elif _input == 4:
             move(td)
         else:
             show_error(_input)
@@ -80,7 +86,7 @@ def talk_to_classmate(td):
         guide.school_talk_guide()
         _input = int(input('choose:'))
         if _input == 1:
-            event.coop_haruki(td)
+            event.coop_event(coop.cpn_chariot,td)
         elif _input == 2:
             return
         else:
@@ -113,7 +119,7 @@ def repair_shop(td):
         elif _input == 4:
             pass
         elif _input == 5:
-           event.coop_kappa(td)
+            event.coop_event(coop.cpn_hangedman,td)
         else:
             show_error(_input)
 
@@ -128,6 +134,21 @@ def street(td):
         elif _input == 2:
             fast_food(td)
         elif _input == 3:
+            return
+        elif _input == 4:
+            talk_to_stranger(td)
+        else:
+            show_error(_input)
+
+def talk_to_stranger(td):
+    now = td.day.get_time()
+    while td.day.get_time() == now:
+        print('现在是：', day.time_list[td.day.get_time()], now)
+        guide.stranger_talk_guide()
+        _input = int(input('choose: '))
+        if _input == 1:
+            event.coop_event(coop.cpn_temperance,td)
+        elif _input == 2:
             return
         else:
             show_error(_input)
@@ -144,7 +165,7 @@ def clinic(td):
         elif _input == 2:
             return
         elif _input == 3:
-            event.coop_erin(td)
+            event.coop_event(coop.cpn_death,td)
         else:
             show_error(_input)
 
@@ -157,11 +178,8 @@ def fast_food(td):
         if _input == 1:
             pass
         elif _input == 2:
-            event.coop_shion(td)
+            event.fast_food_challenge(td)
         elif _input == 3:
             return
         else:
             show_error(_input)
-
-
-

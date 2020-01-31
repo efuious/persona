@@ -24,6 +24,7 @@ def house_guide():
     print('2. 移动')
     print('3. 学习')
     print('4. 睡觉')
+    print('5. 查看信息')
 
 def repair_shop_guide():
     sys.clrscr()
@@ -35,15 +36,16 @@ def jinja_guide():
     sys.clrscr()
     print('这里是神社')
     print('1. 向巫女搭话')
-    print('2. 抽签')
+    print('2. 拜神')
     print('3. 移动')
 
 def school_guide():
     sys.clrscr()
     print('这里是学校')
     print('1. 向同学搭话')
-    print('2. 存档')
-    print('3. 移动')
+    print('2. 去图书馆')
+    print('3. 存档')
+    print('4. 移动')
 
 def school_talk_guide():
     sys.clrscr()
@@ -72,6 +74,13 @@ def street_guide():
     print('1. 诊所')
     print('2. 快餐店')
     print('3. 离开')
+    print('4. 对话')
+
+def stranger_talk_guide():
+    sys.clrscr()
+    print('和谁说话？')
+    print('1. 紫苑')
+    print('2. 离开')
 
 def clinic_guide():
     sys.clrscr()
@@ -84,5 +93,5 @@ def fast_food_guide():
     sys.clrscr()
     print('这里是快餐店')
     print('1. 买东西')
-    print('2. 打发时间')
+    print('2. 快餐店挑战活动')
     print('3. 离开')

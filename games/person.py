@@ -52,6 +52,8 @@ class player:
         for i in range(coop.ncoop):
             self.show_coop(i)
 
+    def refresh(self):
+        self.status[s_status] = 1
 
 class init_player:
     def __init__(self,p_name):
@@ -70,6 +72,8 @@ class init_player:
         self.status = [zero] * nstatus
         for i in range(1, nstatus):
             self.status[i] = zero
+
+
 
 if __name__ == '__main__':
     persona = player(init_player('human'))

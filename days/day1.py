@@ -7,6 +7,7 @@ class today(day.day):
     def morning_event(self):
         print('早上')
         print('今天是转学过来的第一天，决定早点去学校')
+        self.td.player.refresh()
         self.td.day.time_pass()
     def beforenoon_event(self):
         print('上午')
@@ -15,7 +16,7 @@ class today(day.day):
         self.td.day.time_pass()
     def noon_event(self):
         print('同学过来搭话了')
-        coop.coop_to(coop.cpn_haruki, self.td.player)
+        coop.coop_to(coop.cpn_chariot, self.td.player)
         self.td.day.time_pass()
     def afternoon_event(self):
         print('放学了...')
