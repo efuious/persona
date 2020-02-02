@@ -7,6 +7,10 @@ def press():
 def clrscr():
     os.system('cls')
 
+def show_back(message):
+    print(message)
+    press()
+
 if __name__ == '__main__':
     clrscr()
     press()

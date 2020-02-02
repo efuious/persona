@@ -1,46 +1,44 @@
 from games import coop
-from system import control as sys
 
-status_list = ['name','brave','charm','strength','knowledge','speed','potential','spirit','status']
-
+status_list = ['name','brave','charm','strength','knowledge','speed','potential','spirit','status','money']
 zero = 0
-nstatus = len(status_list)
-s_name = 0
-s_brave = 1
-s_charm = 2
-s_strength = 3
-s_knowledge = 4
-s_speed = 5
-s_potential = 6
-s_spirit = 7
-s_status = 8
+
+class property:
+    name        = 0
+    brave       = 1
+    charm       = 2
+    strength    = 3
+    knowledge   = 4
+    speed       = 5
+    potential   = 6
+    spirit      = 7
+    status      = 8
+    money       = 9
 
 class player:
     def __init__(self,p):
-        print('loading player: ',p.status[s_name])
+        print('loading player: ',p.status[property.name])
         self.coops = p.coops
         self.status = p.status
 
     def status_plus(self,status_n):
-        print(self.status[s_name],'的',status_list[status_n],'提升了')
+        print(self.status[property.name],'的',status_list[status_n],'提升了')
         self.status[status_n] += 1
-        sys.press()
 
-    def coop_plus(self,coop_n):
-        print(coop.name_list[coop_n], '的 coop 提升了')
-        self.coops[coop_n] += 1
-        sys.press()
+    def coop_plus(self,coop_n,level):
+        print(coop.name_list[coop_n], '的 coop 提升了',level)
+        self.coops[coop_n] += level
 
     def show_status(self,status_n):
         print(status_list[status_n],':',self.status[status_n])
         return self.status[status_n]
 
     def show_all_status(self):
-        for i in range(nstatus):
+        for i in range(len(status_list)):
             self.show_status(i)
 
     def show_coop(self,coop_n):
-        print(coop.name_list[coop_n], '\' coops is', self.coops[coop_n])
+        print(coop.name_list[coop_n], '的coop：', self.coops[coop_n])
         return self.coops[coop_n]
 
     def show_konwn_coop(self):
@@ -53,17 +51,17 @@ class player:
             self.show_coop(i)
 
     def refresh(self):
-        self.status[s_status] = 1
+        self.status[property.status] = 1
 
 class init_player:
     def __init__(self,p_name):
         print('init player: ', p_name)
         self.init_coops(coop.ncoop)
-        self.init_status(nstatus)
+        self.init_status(len(status_list))
         self.init_name(p_name)
 
     def init_name(self,p_name):
-        self.status[s_name] = p_name
+        self.status[property.name] = p_name
 
     def init_coops(self,coop_n):
         self.coops = [zero] * coop.ncoop
@@ -72,14 +70,4 @@ class init_player:
         self.status = [zero] * nstatus
         for i in range(1, nstatus):
             self.status[i] = zero
-
-
-
-if __name__ == '__main__':
-    persona = player(init_player('human'))
-    persona.coop_plus(coop.cpn_reimu)
-    persona.coop_plus(coop.cpn_reimu)
-    persona.coop_plus(coop.cpn_haruki)
-    persona.coop_plus(coop.cpn_haruki)
-    print('已知的coop:')
-    persona.show_konwn_coop()
+        self.status[property.money] += 100000
